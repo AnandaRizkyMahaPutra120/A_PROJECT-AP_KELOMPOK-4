@@ -68,10 +68,10 @@ int main() {
     // MENU LAYANAN
     cout << "\n=== PILIH PAKET ===\n";
     cout << "1. Paket Harian (Rp 40.000)\n";
-    cout << "2. Paket Bulanan\n" ;
+    cout << "2. Paket Bulanan (Rp  1.200.000)\n" ;
     cout << "- A. Diskon siswa / mahasiswa 20%\n";
     cout << "- B. Diskon umum 15%\n";
-    cout << "3. Paket Tahunan\n";
+    cout << "3. Paket Tahunan (Rp 14.600.000)\n";
     cout << "- A. Diskon siswa / mahasiswa 25%\n";
     cout << "- B. Diskon umum 20%\n";
     cout << "4. Exit\n";
@@ -161,3 +161,4 @@ int main() {
     cout << "--- Terima kasih telah menggunakan ARSport-GYM ---\n";
     return 0;
 }
+
