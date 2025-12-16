@@ -6,7 +6,7 @@ int main() {
     string ulangi;
     do {
         system("cls");
-    char customerType;
+    char kategori;
     string nama, kelamin;
     int usia;
     string nisn;
@@ -16,11 +16,11 @@ int main() {
     cout << "A) Siswa / Mahasiswa\n";
     cout << "B) Umum\n";
     cout << "Pilih kategori (A/B): ";
-    cin >> customerType;
+    cin >> kategori;
     cin.ignore();
 
     // INPUT DATA DIRI
-    if (customerType == 'A' || customerType == 'a') {
+    if (kategori == 'A' || kategori == 'a') {
         cout << "\n=== DATA PELAJAR ===\n";
         cout << "Nama           : ";
         getline(cin, nama);
@@ -32,7 +32,7 @@ int main() {
         cout << "NISN/NIM       : ";
         cin >> nisn;
     } 
-    else if (customerType == 'B' || customerType == 'b') {
+    else if (kategori == 'B' || kategori == 'b') {
         cout << "\n=== DATA UMUM ===\n";
         cout << "Nama           : ";
         getline(cin, nama);
@@ -57,25 +57,34 @@ int main() {
     double diskonBulanan = 0;
     double diskonTahunan = 0;
 
-    if (customerType == 'A' || customerType == 'a') {
+    if (kategori == 'A' || kategori == 'a') {
         diskonBulanan = 0.20;   // 20%
         diskonTahunan = 0.25;   // 25%
-    } else {
+    } 
+    else {
         diskonBulanan = 0.15;   // 15%
         diskonTahunan = 0.20;   // 20%
     }
 
     // MENU LAYANAN
-    cout << "\n=== PILIH PAKET ===\n";
-    cout << "1. Paket Harian (Rp 40.000)\n";
-    cout << "2. Paket Bulanan (Rp  1.200.000)\n" ;
-    cout << "- A. Diskon siswa / mahasiswa 20%\n";
-    cout << "- B. Diskon umum 15%\n";
-    cout << "3. Paket Tahunan (Rp 14.600.000)\n";
-    cout << "- A. Diskon siswa / mahasiswa 25%\n";
-    cout << "- B. Diskon umum 20%\n";
-    cout << "4. Exit\n";
-
+    if (kategori == 'A' || kategori == 'a') {
+        cout << "\n=== PILIH PAKET ===\n";
+        cout << "1. Paket Harian (Rp 40.000)\n";
+        cout << "2. Paket Bulanan (Rp 1.200.000)\n" ;
+        cout << "   - Diskon siswa / mahasiswa 20%\n";
+        cout << "3. Paket Tahunan (Rp 14.600.000)\n";
+        cout << "   -  Diskon siswa / mahasiswa 25%\n";
+        cout << "4. Exit\n";
+    }
+    else {
+        cout << "\n=== PILIH PAKET ===\n";
+        cout << "1. Paket Harian (Rp 40.000)\n";
+        cout << "2. Paket Bulanan (Rp 1.200.000)\n" ;
+        cout << "   - Diskon umum 15%\n";
+        cout << "3. Paket Tahunan (Rp 16.600.000)\n";
+        cout << "   - Diskon umum 20%\n";
+        cout << "4. Exit\n";
+    }
     int choice;
     cout << "Masukkan pilihan (1-4): ";
     cin >> choice;
@@ -84,13 +93,12 @@ int main() {
         cout << "Terima kasih!\n";
         return 0;
     }
-
     int jumlah;
     double subtotal = 0, total = 0, potongan = 0;
 
     // PERHITUNGAN SESUAI KETENTUAN
     if (choice == 1) {
-        cout << "Input jumlah hari: ";
+        cout << "Jumlah hari: ";
         cin >> jumlah;
         subtotal = jumlah * hargaHarian;
         total = subtotal;
@@ -141,7 +149,7 @@ int main() {
     cout << "Usia         : " << usia << endl;
     cout << "Kelamin      : " << kelamin << endl;
 
-    if (customerType == 'A' || customerType == 'a')
+    if (kategori == 'A' || kategori == 'a')
         cout << "NISN/NIM     : " << nisn << endl;
 
     if (choice == 1) cout << "Layanan      : Paket Harian\n";
@@ -161,4 +169,3 @@ int main() {
     cout << "--- Terima kasih telah menggunakan ARSport-GYM ---\n";
     return 0;
 }
-
